@@ -37,7 +37,7 @@ class Loginfs extends React.Component{
         password : this.state.password,    
     }
   
-    fetch('http://localhost:3005/loginfs', {
+    fetch('https://image-editing-competition.herokuapp.com/loginfs', {
         method: 'post',
         body: JSON.stringify(
           loginDetails

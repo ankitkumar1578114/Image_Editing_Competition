@@ -18,7 +18,7 @@ class PreviousTask extends React.Component{
        }
      
       getDetails(){
-        fetch('http://localhost:3005/getDetailsofimages', {
+        fetch('https://image-editing-competition.herokuapp.com/getDetailsofimages', {
             method: 'post',
             body : JSON.stringify({
                email:sessionStorage.email 

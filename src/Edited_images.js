@@ -31,7 +31,7 @@ class Edited_images extends React.Component{
         // this.setState({
         //     main_pic:this.props.location.state.main_pic,
         //     });        
-        fetch('http://localhost:3005/rateimages', {
+        fetch('https://image-editing-competition.herokuapp.com/rateimages', {
             method: 'post',
             body : JSON.stringify({
                main_pic:this.state.main_pic 

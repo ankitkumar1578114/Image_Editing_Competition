@@ -18,7 +18,7 @@ class BrowseImages extends React.Component{
    }
  
   getDetails(){
-    fetch('http://localhost:3005/getDetails', {
+    fetch('https://image-editing-competition.herokuapp.com/getDetails', {
         method: 'post',
         body : JSON.stringify(),
         headers: {

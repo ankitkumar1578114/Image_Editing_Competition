@@ -22,7 +22,7 @@ class Edited_images_boxes extends React.Component{
 
             rate(){
                 var rate = document.getElementById("rate").nodeValue;
-                fetch('http://localhost:3005/rate', {
+                fetch('https://image-editing-competition.herokuapp.com/rate', {
                     method: 'post',
                     body : JSON.stringify({
                        pic_name:this.state.pic_name,

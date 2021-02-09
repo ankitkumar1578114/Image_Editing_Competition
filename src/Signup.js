@@ -37,7 +37,7 @@ async submitHandler(e){
       try{
     var res1 =  await axios({
         method: 'post',
-        url: 'http://localhost:3005/signup',
+        url: 'https://image-editing-competition.herokuapp.com/signup',
         data: formdata,
         headers: {'Content-Type': 'application/json' }
        });

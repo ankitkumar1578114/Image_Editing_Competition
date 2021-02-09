@@ -39,7 +39,7 @@ async submitHandler(e){
     try{
     var res1 =  await axios({
         method: 'post',
-        url: 'http://localhost:3005/getdata',
+        url: 'https://image-editing-competition.herokuapp.com/getdata',
         data: formdata,
         headers: {'Content-Type': 'multipart/form-data' }
        });
