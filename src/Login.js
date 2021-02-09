@@ -37,7 +37,7 @@ async submitHandler(e){
         password : this.state.password,    
     }
   
-    fetch('http://localhost:3005/login', {
+    fetch('https://image-editing-competition.herokuapp.com/login', {
         method: 'post',
         body: JSON.stringify(
           loginDetails
