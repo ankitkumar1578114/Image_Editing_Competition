@@ -10,6 +10,7 @@ class Edited_images_boxes extends React.Component{
           student :'',
           rate:'',
           pic_name:'',
+          isSent:false
           }
           this.rate = this.rate.bind(this);
         };
@@ -21,7 +22,8 @@ class Edited_images_boxes extends React.Component{
             }
 
             rate(){
-                var rate = document.getElementById("rate").nodeValue;
+                var rate = document.getElementById("rate").value;
+                console.log(rate);
                 fetch('https://image-editing-competition.herokuapp.com/rate', {
                     method: 'post',
                     body : JSON.stringify({
@@ -34,11 +36,12 @@ class Edited_images_boxes extends React.Component{
                     }
                   }).then((res) => res.json())
                .then((json) => {
-                console.log(json.mes.length);        
-                var meslen=json.mes.length;
                 // this.setState({getting:json.mes});         
                 console.log(json.mes)
-                this.setState({getting:json.mes})
+                if(json.mes=="Rating_given")
+                {
+                this.setState({isSent:true})
+                }
               });
               return;
               }
@@ -46,12 +49,29 @@ class Edited_images_boxes extends React.Component{
 
 
     render(){
+if(this.state.isSent)
+{
 if(this.state.pic_name)
 {
 return (
 <div>
 <div class="container mt-2 md-2">
-{this.state.student}
+<div style={{fontWeight:"600"}}>{this.state.student}</div>
+<img src={process.env.PUBLIC_URL + "/Upload/" + this.state.pic_name}
+style={{width:"100%"}}    
+/>
+<div style={{fontWeight:"700"}}>Rated</div>
+</div>
+</div>
+); 
+}}
+else{
+if(this.state.pic_name)
+{
+return (
+<div>
+<div class="container mt-2 md-2">
+<div style={{fontWeight:"600"}}>{this.state.student}</div>
 <img src={process.env.PUBLIC_URL + "/Upload/" + this.state.pic_name}
 style={{width:"100%"}}    
 />
@@ -82,7 +102,7 @@ style={{width:"100%"}}
         );
           
       }
-
+    }
 }
 }
 

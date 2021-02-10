@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import {browserHistory,Link ,Redirect,Switch,Route} from "react-router-dom";
 import CreateTask from './CreateTask';
 import Edited_images_boxes from './Edited_images_boxes';
+var array=[];
 class Edited_images extends React.Component{
     constructor(props){
         super(props);
@@ -67,9 +68,12 @@ style={{width:"100%"}}
 <div class="container p-3">
 
 <h6>Student's Images</h6>
-<Edited_images_boxes  student={this.state.getting[0]?this.state.getting[0].student:""} pic_name={this.state.getting[0]?this.state.getting[0].pic_name:""} />
- <Edited_images_boxes  student={this.state.getting[1]?this.state.getting[1].student:""} pic_name={this.state.getting[1]?this.state.getting[1].pic_name:""} />
-
+{         
+          array=this.state.getting,
+          array.map(any=>(
+            <Edited_images_boxes  student={any?any.student:""} pic_name={any?any.pic_name:""} />
+          )) 
+}
 </div>
 </div>
     );

@@ -4,9 +4,7 @@ function Title() {
     <div style={{textAlign:"center",
     marginTop:"10px",
     fontWeight:"700",
-    fontSize:"18px",
-    color:"white",
-    backgroundColor:"rgb(0,0,0)"
+    fontSize:"20px",
     }}>
     Image Editing competition
     </div>

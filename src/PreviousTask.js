@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import {browserHistory,Link ,Redirect,Switch,Route} from "react-router-dom";
 import CreateTask from './CreateTask';
 import PreviousTaskBoxes from './PreviousTaskBoxes';
+var array=[];
 class PreviousTask extends React.Component{
     constructor(props){
         super(props);
@@ -16,7 +17,6 @@ class PreviousTask extends React.Component{
         this.getDetails();
       
        }
-     
       getDetails(){
         fetch('https://image-editing-competition.herokuapp.com/getDetailsofimages', {
             method: 'post',
@@ -45,8 +45,12 @@ render(){
 return (
 <div>
 <h5 style={{marginLeft:"20px"}}>Your Tasks</h5>
-<PreviousTaskBoxes  description={this.state.getting[0]?this.state.getting[0].description:""} main_pic={this.state.getting[0]?this.state.getting[0].pic_name:""} />
- <PreviousTaskBoxes  description={this.state.getting[1]?this.state.getting[1].description:""} main_pic={this.state.getting[1]?this.state.getting[1].pic_name:""} />
+{         
+          array=this.state.getting,
+          array.map(ani=>(
+            <PreviousTaskBoxes  description={ani?ani.description:""} main_pic={ani?ani.pic_name:""} />
+          )) 
+}
 </div>
     );
 }

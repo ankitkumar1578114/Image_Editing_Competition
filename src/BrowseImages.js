@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {browserHistory,Link ,Redirect} from "react-router-dom";
 import axios from 'axios';
 import BrowseImagesBoxes from './BrowseImagesBoxes';
+var array=[]
 class BrowseImages extends React.Component{
   constructor(props){
     super(props);
@@ -42,6 +43,12 @@ render(){
 return(
 <>
 Browse Images
+{         
+          array=this.state.getting,
+          array.map(any=>(
+            <BrowseImagesBoxes  description={any?any.description:""} main_pic={any?any.pic_name:""} />
+          )) 
+}
 <BrowseImagesBoxes  description={this.state.getting[0]?this.state.getting[0].description:""} main_pic={this.state.getting[0]?this.state.getting[0].pic_name:""} />
  <BrowseImagesBoxes  description={this.state.getting[1]?this.state.getting[1].description:""} main_pic={this.state.getting[1]?this.state.getting[1].pic_name:""} />
  

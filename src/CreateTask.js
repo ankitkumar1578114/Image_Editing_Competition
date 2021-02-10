@@ -13,6 +13,7 @@ class CreateTask extends React.Component{
         this.state ={
           description :'',
           selectedFiles :null,
+          isSent:false
         };
        }
      
@@ -45,6 +46,10 @@ async submitHandler(e){
        });
       console.log("dkljsfkl");
       console.log(res1);
+      if(res1.data=="Uploaded")
+      {
+       this.setState({isSent:true}) 
+      }
     }
     catch(err)
     {
@@ -64,14 +69,19 @@ async submitHandler(e){
 
   }
 render(){
+if(this.state.isSent)
+{
+return <>Uploaded</>
+}
+else{
 if(!sessionStorage.email)
 {
   return <div>Signup First</div>;
 }else{
   return(
     <>
-    Create Task
-    <form onSubmit={this.submitHandler}>
+<div style={{paddingTop:"10px",paddingBottom:"10px",fontSize:"18px",textAlign:"center",fontWeight:"700"}}>Create Task</div>
+    <form >
       <div class="form-group">
         <input type="file" class="form-control-file" id="pic" onChange={this.onChangeFiles} required name="upload" />
       </div>
@@ -79,10 +89,11 @@ if(!sessionStorage.email)
         <label for="exampleFormControlTextarea1">Description</label>
         <textarea class="form-control" id="description"  name="description"rows="3" onChange={this.onChangeDescription}  required></textarea>
       </div>
-      <input type="submit" class="btn btn-default" style={{backgroundColor:"black",color:"white"}} value="Complete" id="login" />
+      <input type="submit" class="btn btn-default" style={{backgroundColor:"black",color:"white"}} value="Upload" id="login" onClick={this.submitHandler} />
     </form>
     </>
     );
+}
 }
 }
 }

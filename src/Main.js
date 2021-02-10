@@ -28,7 +28,9 @@ if(!sessionStorage.email)
             {
              sessionStorage.email   
             }
-            <Link to ="/browseimages"><button type="button" class="btn btn-outline-primary m-2 ml-5 mt-5">Browse Images</button> </Link>
+            <div style={{textAlign:"center",marginTop:"50px"}}>
+            <Link to ="/browseimages"><button type="button"style={{color:"black",borderColor:"black"}} class="btn btn-outline-secondary  ">Browse Images</button> </Link>
+            </div>
             </div>
                 );
     

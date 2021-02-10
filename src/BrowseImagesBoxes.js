@@ -42,7 +42,7 @@ class BrowseImagesBoxes extends React.Component{
         try{
         var res1 =   await axios({
             method: 'post',
-            url: 'https://image-editing-competition.herokuapp.com/uploadstudent',
+            url: 'https://image-editing-competition.herokuapp.com/iuploadstudent',
             data: formdata,
             headers: {'Content-Type': 'multipart/form-data' }
            });
