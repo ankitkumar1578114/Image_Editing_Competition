@@ -51,9 +51,9 @@ async submitHandler(e){
           console.log(json.mes);
             if(json.mes=="yea")
             {
-              this.setState({isLoggedIn:true});
               sessionStorage.setItem("email",json.email);   
               sessionStorage.setItem("who","instructor");   
+              this.setState({isLoggedIn:true});
             }
         })
  //     fetch('http://localhost:3005/getdata', {
@@ -77,10 +77,7 @@ render(){
 
 return(
 <>
-{
-sessionStorage.email    
-}
-Login
+<div style={{paddingTop:"10px",paddingBottom:"10px",fontSize:"18px",textAlign:"center",fontWeight:"700"}}>Instructor's Login</div>
 <form onSubmit={this.submitHandler}>
 <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
@@ -90,7 +87,7 @@ Login
     <label for="exampleInputPassword1">Password</label>
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" onChange={this.onChangePassword}/>
   </div>
- <input type="submit" class="btn btn-default" style={{backgroundColor:"black",color:"white"}} value="Complete" id="login" />
+ <input type="submit" class="btn btn-default" style={{backgroundColor:"black",color:"white"}} value="Login" id="login" />
 </form>
 </>
 );

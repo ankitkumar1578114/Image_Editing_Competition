@@ -70,7 +70,7 @@ async submitHandler(e){
 render(){
 return(
 <>
-Signup
+<div style={{paddingTop:"10px",paddingBottom:"10px",fontSize:"18px",textAlign:"center",fontWeight:"700"}}>Student's Signup</div>
 <form onSubmit={this.submitHandler}>
     <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>

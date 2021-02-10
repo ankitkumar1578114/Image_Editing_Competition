@@ -12,11 +12,10 @@ if(!sessionStorage.email)
         {
          sessionStorage.email   
         }
-
-        <Link to ="/signup"><button type="button" class="btn btn-outline-primary m-2 ml-5 mt-5">Signup</button> </Link>
-        <Link to ="/login"><button type="button" class="btn btn-outline-secondary m-2 mt-5">Login</button></Link>
-        <Link to ="/signupfs"><button type="button" class="btn btn-outline-primary m-2 ml-5 mt-5">Student's Signup</button> </Link>
-        <Link to ="/loginfs"><button type="button" class="btn btn-outline-secondary m-2 mt-5">Student's Login</button></Link>
+        <div style={{textAlign:"center",marginTop:"50px"}}><Link to ="/signupfs"><button style={{color:"black",borderColor:"black"}} type="button" class="btn btn-outline-secondary m-3">Student's Signup</button> </Link></div>
+        <div style={{textAlign:"center"}}><Link to ="/loginfs"><button style={{color:"black",borderColor:"black"}} type="button" class="btn btn-outline-secondary m-3 ">Student's Login</button></Link><br /></div>
+        <div style={{textAlign:"center"}}><Link to ="/signup"><button style={{color:"black",borderColor:"black"}} type="button" class="btn btn-default m-3">Instructor's Signup</button> </Link></div>
+        <div style={{textAlign:"center"}}><Link to ="/login"><button style={{color:"black",borderColor:"black"}} type="button" class="btn btn-outline-secondary m-3 ">Instructor's Login</button></Link></div>
         </div>
             );
         
@@ -41,8 +40,8 @@ if(!sessionStorage.email)
         {
          sessionStorage.email   
         }
-        <Link to ="/createtask"><button type="button" class="btn btn-outline-primary m-2 ml-5 mt-5">Create Task</button> </Link>
-        <Link to ="/previoustask"><button type="button" class="btn btn-outline-secondary m-2 mt-5">Score Task</button></Link>
+        <Link to ="/createtask"><button type="button"style={{color:"black",borderColor:"black"}} type="button" class="btn btn-outline-secondary  m-2 ml-5 mt-5">Create Task</button> </Link>
+        <Link to ="/previoustask"><button type="button" style={{color:"black",borderColor:"black"}} type="button" class="btn btn-outline-secondary  m-2 ml-5 mt-5" class="btn btn-outline-secondary m-2 mt-5">Score Task</button></Link>
         </div>
             );
     }       

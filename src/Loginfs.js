@@ -76,7 +76,7 @@ render(){
 }else{  
 return(
 <>
-Student's Login
+<div style={{paddingTop:"10px",paddingBottom:"10px",fontSize:"18px",textAlign:"center",fontWeight:"700"}}>Student's Login</div>
 <form onSubmit={this.submitHandler}>
 <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
@@ -86,7 +86,7 @@ Student's Login
     <label for="exampleInputPassword1">Password</label>
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" onChange={this.onChangePassword} />
   </div>
- <input type="submit" class="btn btn-default" style={{backgroundColor:"black",color:"white"}} value="Complete" id="login" />
+ <input type="submit" class="btn btn-default" style={{backgroundColor:"black",color:"white"}} value="Login" id="login" />
 </form>
 </>
 );
